@@ -21,20 +21,6 @@ namespace StorageApp.Repos
         {
             return _dbSet.Find(id);
         }
-        public void Update (T entity)
-        {
-            _dbSet.Update(entity);
-        }
-        //public void IncreaseAmount(int id, int amount)
-        //{
-        //    var item = _dbSet.Find(id);
-        //    item.Amount += amount;
-        //}
-        //public void DecreaseAmount(int id, int amount)
-        //{
-        //    var item = _dbSet.Find(id);
-        //    item.Amount -= amount;
-        //}
         public void Add(T item)
         {
             _dbSet.Add(item);
