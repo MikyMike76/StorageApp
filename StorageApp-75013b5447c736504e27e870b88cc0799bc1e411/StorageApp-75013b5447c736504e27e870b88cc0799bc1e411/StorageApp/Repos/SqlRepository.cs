@@ -23,7 +23,7 @@ namespace StorageApp.Repos
         }
         public void Update (T item)
         {
-            var itemToUpdate = _dbSet.Where(i => i.Id == item.Id).FirstOrDefault();
+            var itemToUpdate = _dbSet.Find(item.Id);/*Where(i => i.Id == item.Id).FirstOrDefault();*/
             if (itemToUpdate != null)
             {
                 _dbContext.Entry(itemToUpdate).CurrentValues.SetValues(item);
