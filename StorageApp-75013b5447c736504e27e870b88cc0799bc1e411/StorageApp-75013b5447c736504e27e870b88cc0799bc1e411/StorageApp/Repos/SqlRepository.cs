@@ -21,6 +21,14 @@ namespace StorageApp.Repos
         {
             return _dbSet.Find(id);
         }
+        public void Update (T item)
+        {
+            var itemToUpdate = _dbSet.Where(i => i.Id == item.Id).FirstOrDefault();
+            if (itemToUpdate != null)
+            {
+                _dbContext.Entry(itemToUpdate).CurrentValues.SetValues(item);
+            }
+        }
         public void Add(T item)
         {
             _dbSet.Add(item);
